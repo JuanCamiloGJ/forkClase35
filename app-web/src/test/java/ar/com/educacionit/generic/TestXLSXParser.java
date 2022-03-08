@@ -14,8 +14,12 @@ public class TestXLSXParser {
 
 		try {
 			Collection<Articulos> articulos = xlsxParser.parse();			
-			//System.out.println(articulos.size() == 1);
+			System.out.println(articulos.size() == 1);
 			System.out.println(articulos);
+			
+			PDFCreator crear = new PDFCreator();
+			crear.setArticulos(articulos);
+			crear.crearPDF();
 		} catch (ParseException e) {
 			System.err.println(e);
 		}
